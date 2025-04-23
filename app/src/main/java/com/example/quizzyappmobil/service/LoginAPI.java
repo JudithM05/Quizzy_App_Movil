@@ -21,7 +21,7 @@ public class LoginAPI {
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl("http://10.0.2.2:8000/") // Usa 10.0.2.2 para emuladores
-                    //.baseUrl("http://54.237.181.97:8000/")
+                    //.baseUrl("http://54.205.246.59:8000/")
                     .addConverterFactory(GsonConverterFactory.create(gsonBuilder.create()))
                     .client(client)
                     .build();
