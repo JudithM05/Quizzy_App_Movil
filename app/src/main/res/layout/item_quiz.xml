@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="170dp"
+    android:layout_height="200dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Imagen del quiz -->
+        <ImageView
+            android:id="@+id/imagen_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="#EEEEEE"
+            android:contentDescription="Imagen del quiz" />
+
+        <!-- Contenedor superior con título -->
+        <LinearLayout
+            android:id="@+id/contenedor_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_top_background"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp">
+
+            <TextView
+                android:id="@+id/titulo_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/aleo_black"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+        <!-- Contenedor inferior con autor y botón -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_bottom_background"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/autor_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Autor: Prof1"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <Button
+                    android:id="@+id/boton_jugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="JUGAR"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/naranja"
+                    android:layout_alignParentStart="true"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"/>
+
+                <ImageButton
+                    android:id="@+id/boton_favorito"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_favorite_border"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="Favorito"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

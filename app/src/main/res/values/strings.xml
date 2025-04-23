@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quizzy App Mobil</string>
+    <string name="desc_quizzy">¡Aprende y diviértete a través de las preguntas!</string>
+    <string name="texto_recomendados">RECOMENDADOS</string>
+    <string name="texto_jugados_recientemente">JUGADOS RECIENTEMENTE</string>
+    <string name="texto_favoritos">FAVORITOS</string>
+</resources>
