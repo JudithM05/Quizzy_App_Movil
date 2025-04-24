@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class QuizAPI {
     private static QuizService mAPI = null;
-
+    public static final String BASE_URL = "http://10.0.2.2:8000/";
     public static synchronized QuizService getAPI() {
         if (mAPI == null) {
             OkHttpClient client = getOkHttpClient();

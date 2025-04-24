@@ -3,10 +3,14 @@ package com.example.quizzyappmobil.service;
 import com.example.quizzyappmobil.data.Pregunta;
 import com.example.quizzyappmobil.data.Quiz;
 import com.example.quizzyappmobil.data.Respuesta;
+import com.example.quizzyappmobil.data.ResultadoQuiz;
+import com.example.quizzyappmobil.data.Usuario;
 
 import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface QuizService {
@@ -23,4 +27,14 @@ public interface QuizService {
     // Obtener respuestas de una pregunta específica
     @GET("respuesta/pregunta/{id_pregunta}/respuestas")
     Call<List<Respuesta>> obtenerRespuestasPorPregunta(@Path("id_pregunta") int preguntaId);
+
+    // Nuevos endpoints
+    @GET("quizzes/{id}/resultados")
+    Call<List<ResultadoQuiz>> obtenerResultadosPorQuiz(@Path("id") int quizId);
+
+    @GET("usuarios/{id}")
+    Call<Usuario> obtenerUsuarioPorId(@Path("id") int usuarioId);
+
+    @POST("resultados")
+    Call<ResultadoQuiz> enviarResultadoQuiz(@Body ResultadoQuiz resultado);
 }

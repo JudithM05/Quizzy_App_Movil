@@ -8,6 +8,7 @@ public class Pregunta {
     private String descripcion;
     private String imagen;
     private List<Respuesta> respuestas;
+    private int tiempo;
 
     // Constructor
     public Pregunta(int id, int id_quiz, String descripcion, String imagen) {
@@ -52,6 +53,14 @@ public class Pregunta {
 
     public List<Respuesta> getRespuestas() {
         return respuestas;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
     }
 
     public void setRespuestas(List<Respuesta> respuestas) {

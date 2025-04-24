@@ -1,5 +1,6 @@
 package com.example.quizzyappmobil.Pantallas;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -303,12 +304,21 @@ public class PantallaQuiz extends AppCompatActivity {
         // Mostrar puntuación final
         resultadoTextView.setText("Puntuación final: " + puntuacion + "/" + preguntas.size());
 
-        // Aquí puedes añadir lógica adicional, como guardar resultados,
-        // mostrar un botón para volver al menú principal, etc.
+        // Guardar resultado en SharedPreferences para poder pasar a la siguiente pantalla
+        // (esto es temporal, idealmente se enviaría al servidor)
+        getSharedPreferences("QuizzyPrefs", MODE_PRIVATE)
+                .edit()
+                .putInt("ULTIMO_PUNTAJE", puntuacion)
+                .apply();
 
-        // Por ejemplo, podríamos añadir un botón para volver después de un tiempo
-        opcion1Button.postDelayed(() -> {
-            finish(); // Cierra la actividad y vuelve a la anterior
-        }, 5000); // Esperar 5 segundos antes de volver
+        // Navegar a la pantalla de resultados después de un breve tiempo
+        new android.os.Handler().postDelayed(() -> {
+            Intent intent = new Intent(PantallaQuiz.this, PantallaResultados.class);
+            intent.putExtra("QUIZ_ID", quizId);
+            intent.putExtra("PUNTAJE", puntuacion);
+            intent.putExtra("TOTAL_PREGUNTAS", preguntas.size());
+            startActivity(intent);
+            finish(); // Cierra la actividad actual
+        }, 1500); // Esperar 1.5 segundos antes de cambiar de pantalla
     }
 }
