@@ -29,7 +29,7 @@ public interface QuizService {
     Call<List<Respuesta>> obtenerRespuestasPorPregunta(@Path("id_pregunta") int preguntaId);
 
     // Nuevos endpoints
-    @GET("quizzes/{id}/resultados")
+    @GET("quizes/{id}/resultados")
     Call<List<ResultadoQuiz>> obtenerResultadosPorQuiz(@Path("id") int quizId);
 
     @GET("usuarios/{id}")
