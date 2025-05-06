@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Segundo lugar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2."
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgSegundo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/avatar_predeterminado"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvNombreSegundo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peter"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPuntajeSegundo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99 pts"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Primer lugar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1."
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgPrimero"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/avatar_predeterminado"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvNombrePrimero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gwen"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPuntajePrimero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100 pts"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Tercer lugar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3."
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgTercero"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/avatar_predeterminado"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvNombreTercero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mark"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPuntajeTercero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="85 pts"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

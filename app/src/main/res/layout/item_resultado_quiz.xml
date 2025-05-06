@@ -1,58 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp">
-
-    <TextView
-        android:id="@+id/tvPosicion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFotoPerfil"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivFotoPerfil"
-        tools:text="1." />
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical">
 
     <ImageView
-        android:id="@+id/ivFotoPerfil"
+        android:id="@+id/imgAvatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/tvPosicion"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/avatar_predeterminado" />
+        android:src="@drawable/avatar_predeterminado"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/circle_background" />
 
-    <TextView
-        android:id="@+id/tvNombreUsuario"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFotoPerfil"
-        app:layout_constraintStart_toEndOf="@+id/ivFotoPerfil"
-        app:layout_constraintTop_toTopOf="@+id/ivFotoPerfil"
-        tools:text="Gwen" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFotoPerfil"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivFotoPerfil"
-        tools:text="100 pts" />
+        <TextView
+            android:id="@+id/tvNombre"
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvPuntaje"
+            android:text="100 pts"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

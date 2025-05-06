@@ -7,6 +7,7 @@
     android:background="#FFE0B2"
     tools:context=".Pantallas.PantallaResultados">
 
+    <!-- Botón de volver -->
     <ImageView
         android:id="@+id/btnVolver"
         android:layout_width="40dp"
@@ -20,31 +21,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
+    <!-- Título del Quiz -->
     <TextView
         android:id="@+id/tvTituloQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Quiz1"
+        android:layout_marginStart="16dp"
+        tools:text="Quiz1"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Podio de Resultados -->
+    <include
+        layout="@layout/layout_podio_resultados"
+        android:id="@+id/viewPodio"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloQuiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- RecyclerView para el resto de resultados -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewResultados"
+        android:id="@+id/recyclerResultados"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/viewPodio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloQuiz"
-        tools:listitem="@layout/item_resultado_quiz" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
