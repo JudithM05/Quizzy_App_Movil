@@ -41,8 +41,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
     @NonNull
     @Override
     public QuizViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_quiz, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_quiz, parent, false);
         return new QuizViewHolder(view);
     }
 
@@ -55,31 +54,24 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
 
         // Cargar imagen del quiz usando Glide
         if (quiz.getImagen() != null && !quiz.getImagen().isEmpty()) {
-            // Construir URL completa si es necesario
             String imageUrl = "http://192.168.38.2:8000" + quiz.getImagen();
-            Glide.with(context)
+            Glide.with(holder.itemView.getContext())
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder_quiz)
                     .error(R.drawable.placeholder_quiz)
                     .centerCrop()
                     .into(holder.imagenQuiz);
         } else {
-            // Cargar imagen predeterminada
             holder.imagenQuiz.setImageResource(R.drawable.placeholder_quiz);
         }
 
-        // Actualizar icono de favorito según estado
-        if (quiz.isEsFavorito()) {
-            holder.botonFavorito.setImageResource(R.drawable.ic_favorite_filled);
-        } else {
-            holder.botonFavorito.setImageResource(R.drawable.ic_favorite_border);
-        }
+        holder.botonFavorito.setImageResource(
+                quiz.isEsFavorito() ? R.drawable.ic_favorite_filled : R.drawable.ic_favorite_border
+        );
 
-        // Configurar listeners
         holder.botonJugar.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onPlayClick(quiz);
-                // En tu actividad que implementa el listener, tendrías algo como:
                 Intent intent = new Intent(context, PantallaQuiz.class);
                 intent.putExtra("QUIZ_ID", quiz.getId());
                 context.startActivity(intent);
@@ -89,9 +81,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.botonFavorito.setOnClickListener(v -> {
             if (listener != null) {
                 quiz.setEsFavorito(!quiz.isEsFavorito());
-                holder.botonFavorito.setImageResource(
-                        quiz.isEsFavorito() ? R.drawable.ic_favorite_filled : R.drawable.ic_favorite_border
-                );
+                notifyItemChanged(holder.getAdapterPosition());
                 listener.onFavoriteClick(quiz, holder.getAdapterPosition());
             }
         });
