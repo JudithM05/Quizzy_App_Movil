@@ -4,4 +4,7 @@
     <string name="texto_recomendados">RECOMENDADOS</string>
     <string name="texto_jugados_recientemente">JUGADOS RECIENTEMENTE</string>
     <string name="texto_favoritos">FAVORITOS</string>
+    <string name="texto_top5">TOP 5</string>
+    <string name="texto_nuevos">NUEVOS</string>
+    <string name="texto_usuarios_populares">USUARIOS POPULARES</string>
 </resources>

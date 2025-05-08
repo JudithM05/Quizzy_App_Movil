@@ -18,6 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Pantallas.PantallaAjustes"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.PantallaPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.PantallaListas"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.PantallaBuscar"
+            android:exported="false" />
+        <activity
             android:name=".Pantallas.PantallaResultados"
             android:exported="false" />
         <activity

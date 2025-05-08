@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Pantallas.PantallaBuscar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_menu_inferior"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Campo de búsqueda con iconos -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="8dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Icono filtros (izquierda) -->
+                    <ImageView
+                        android:id="@+id/iconoFiltros"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icono_tres_puntos_para_filtros_buscar"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Filtros"
+                        android:padding="4dp"/>
+
+                    <!-- Campo de búsqueda -->
+                    <EditText
+                        android:id="@+id/searchField"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/iconoFiltros"
+                        android:layout_toStartOf="@id/iconoBuscar"
+                        android:hint="Ingresa un texto para buscar"
+                        android:background="@android:color/transparent"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:inputType="text"/>
+
+                    <!-- Icono búsqueda (derecha) -->
+                    <ImageView
+                        android:id="@+id/iconoBuscar"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icono_buscar"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Buscar"
+                        android:padding="4dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sección TOP 5 -->
+            <TextView
+                android:id="@+id/texto_top5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_top5"
+                android:textStyle="bold"
+                android:fontFamily="@font/aleo_black"
+                android:textSize="18sp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTop5"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipToPadding="false"
+                android:scrollbars="horizontal"
+                android:orientation="horizontal"/>
+
+            <!-- Sección NUEVOS -->
+            <TextView
+                android:id="@+id/texto_nuevos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_nuevos"
+                android:textStyle="bold"
+                android:fontFamily="@font/aleo_black"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNuevos"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipToPadding="false"
+                android:scrollbars="horizontal"
+                android:orientation="horizontal"/>
+
+            <!-- Sección AUTORES POPULARES -->
+            <TextView
+                android:id="@+id/texto_usuarios_populares"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_usuarios_populares"
+                android:textStyle="bold"
+                android:fontFamily="@font/aleo_black"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewUsuariosPopulares"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipToPadding="false"
+                android:scrollbars="horizontal"
+                android:orientation="horizontal"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Menú inferior -->
+    <fragment
+        android:id="@+id/fragment_menu_inferior"
+        android:name="com.example.quizzyappmobil.fragment.fragment_menu_inferior"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

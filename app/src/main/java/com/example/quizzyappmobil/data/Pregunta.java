@@ -74,34 +74,28 @@ public class Pregunta {
         this.respuestas = respuestas;
     }
 
-    public String[] getOpciones() {
-        if (respuestas == null || respuestas.size() == 0) {
-            return new String[]{"Cargando...", "Cargando...", "Cargando...", "Cargando..."};
-        }
+    public boolean estaCompleta() {
+        return respuestas != null && respuestas.size() >= 4;
+    }
 
+    public String[] getOpciones() {
         String[] opciones = new String[4];
-        for (int i = 0; i < opciones.length; i++) {
-            if (i < respuestas.size()) {
+        if (respuestas != null && respuestas.size() >= 4) {
+            for (int i = 0; i < 4; i++) {
                 opciones[i] = respuestas.get(i).getDescripcion();
-            } else {
-                opciones[i] = "Opción " + (i + 1);
             }
         }
         return opciones;
     }
 
     public int getRespuestaCorrecta() {
-        if (respuestas == null) return 0;
-
-        for (int i = 0; i < respuestas.size(); i++) {
-            if (respuestas.get(i).isValido()) {
-                return i;
+        if (respuestas != null) {
+            for (int i = 0; i < respuestas.size(); i++) {
+                if (respuestas.get(i).isValido()) {
+                    return i;
+                }
             }
         }
         return 0;
-    }
-
-    public boolean estaCompleta() {
-        return respuestas != null && !respuestas.isEmpty();
     }
 }
