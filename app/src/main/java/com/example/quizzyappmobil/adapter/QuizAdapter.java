@@ -54,7 +54,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
 
         // Cargar imagen del quiz usando Glide
         if (quiz.getImagen() != null && !quiz.getImagen().isEmpty()) {
-            String imageUrl = "http://127.0.0.1:8000" + quiz.getImagen();
+            String imageUrl = "http://51.20.35.158:8000" + quiz.getImagen();
             Glide.with(holder.itemView.getContext())
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder_quiz)

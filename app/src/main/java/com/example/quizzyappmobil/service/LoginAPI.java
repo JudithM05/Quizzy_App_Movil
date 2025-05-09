@@ -20,8 +20,8 @@ public class LoginAPI {
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:8000/")
-                    //.baseUrl("http://34.258.246.232:8000/")
+                    //.baseUrl("http://10.0.2.2:8000/")
+                    .baseUrl("http://51.20.35.158:8000/")
                     .addConverterFactory(GsonConverterFactory.create(gsonBuilder.create()))
                     .client(client)
                     .build();

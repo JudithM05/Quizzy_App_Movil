@@ -5,7 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    public static final String BASE_URL = "http://10.0.2.2:8000";  // O tu IP real si estás en un dispositivo físico
+    //public static final String BASE_URL = "http://10.0.2.2:8000";
+    public static final String BASE_URL = "http://51.20.35.158:8000";// O tu IP real si estás en un dispositivo físico
 
     private static Retrofit retrofit = null;
 

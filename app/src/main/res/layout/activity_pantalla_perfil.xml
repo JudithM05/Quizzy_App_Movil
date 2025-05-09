@@ -7,4 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".Pantallas.PantallaPerfil">
 
+    <!-- Menú inferior -->
+    <fragment
+        android:id="@+id/fragment_menu_inferior"
+        android:name="com.example.quizzyappmobil.fragment.fragment_menu_inferior"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
