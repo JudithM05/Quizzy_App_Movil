@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class QuizAPI {
     private static QuizService mAPI = null;
     //public static final String BASE_URL = "http://10.0.2.2:8000/";
-    public static final String BASE_URL = "http://51.20.35.158:8000/";
+    public static final String BASE_URL = "http://13.53.35.179:8000/";
     //public static final String BASE_URL = "http://192.168.38.2:8000/";
     public static synchronized QuizService getAPI() {
         if (mAPI == null) {
@@ -20,7 +20,7 @@ public class QuizAPI {
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://51.20.35.158:8000/")
+                    .baseUrl("http://13.53.35.179:8000/")
                     //.baseUrl("http://10.0.2.2:8000/") // Para emuladores
                     .addConverterFactory(GsonConverterFactory.create(gsonBuilder.create()))
                     .client(client)
